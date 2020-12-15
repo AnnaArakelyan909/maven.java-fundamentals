@@ -14,7 +14,7 @@ pipeline {
 
         stage('Compile-Package') {
             steps {
-               script {
+               docker {
                    def mvnHome = tool name: 'maven-3', type: 'maven'
                    sh "${mvnHome}/bin/mvn/package"
                 }
